@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+
 # securepomf:
 # If run on a file, will encrypt the file and upload to pomf
 # If run on a special pomf URL, will download and decrypt
@@ -9,14 +10,14 @@ set -e
 # Make sure we have GPG, curl, and a file to work with
 if [ -z $(which gpg) ]; then echo "Please install GPG"; exit; fi
 if [ -z $(which curl) ]; then echo "Please install curl"; exit; fi
-if [ -z "$1" ]; then echo "secup: Run on a file to encrypt and upload it.
-       Run on a secure URL to download and decrypt it."; exit; fi
+if [ -z "$1" ]; then echo "securepomf: Run on a file to encrypt and upload it.
+           Run on a secure URL to download and decrypt it."; exit; fi
 
 
 
 input_URI="$1"
 in_file="$(basename "$input_URI" | cut -d'#' -f1)"
-up_url="http://1339.cf/upload.php"
+up_url="http://1339.cf/upload.php"                # insert preferred clone here
 down_url="http://a.1339.cf"
 
 
@@ -24,7 +25,7 @@ down_url="http://a.1339.cf"
 
 
 function encrypt_upload() {
-    pass="$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c32)"
+    pass="$(< /dev/urandom tr -dc A-Z-a-z-0-9 | head -c22)"  # ~131bits entropy
     out_name="$(< /dev/urandom tr -dc a-z | head -c6)"
 
     if [[ "${in_file##*.}" == "$in_file" ]]
@@ -72,8 +73,7 @@ function download_decrypt() {
 
 
 # Definitely less than ideal for main
-if [[ "$input_URI" == "$down_url"* ]]; then
-        download_decrypt
-    else
-        encrypt_upload
+if [[ "$input_URI" == "$down_url"* ]]
+    then download_decrypt
+    else encrypt_upload
 fi
