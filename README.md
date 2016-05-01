@@ -23,7 +23,7 @@ File saved to: gslbrg.txt
 
 ## AUR package
 
-maintained by [Johnathan "ShaggyTwoDope" Jehnkins](https://github.com/shaggytwodope)
+maintained by [Johnathan "ShaggyTwoDope" Jenkins](https://github.com/shaggytwodope)
 
 [https://aur.archlinux.org/packages/1339secure-git/](https://aur.archlinux.org/packages/1339secure-git/)
 
