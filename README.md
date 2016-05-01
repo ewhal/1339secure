@@ -20,3 +20,10 @@ $ ./pomfsecure http://a.pomf.cat/gslbrg.txt#j6Vp6_BvPtE5xb7dz9ecBj2C-tzc9WyO
 Downloading and decrypting gslbrg.txt...
 File saved to: gslbrg.txt
 ```
+
+## AUR package
+
+maintained by [Johnathan "ShaggyTwoDope" Jehnkins](https://github.com/shaggytwodope)
+
+[https://aur.archlinux.org/packages/1339secure-git/](https://aur.archlinux.org/packages/1339secure-git/)
+
