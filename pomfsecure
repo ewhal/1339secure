@@ -26,7 +26,7 @@ down_url="https://a.pomf.cat"
 
 function encrypt_upload() {
     pass="$(< /dev/urandom tr -dc A-Z-a-z-0-9 | head -c22)"  # ~131bits entropy
-    out_name="$(< /dev/urandom tr -dc a-z | head -c6)"
+    out_name="$(< /dev/urandom tr -dc '[:lower:]' | head -c6)"
 
     if [[ "${in_file##*.}" == "$in_file" ]]
         then ext=""
