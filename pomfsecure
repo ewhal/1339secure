@@ -8,8 +8,8 @@ set -eu
 
 
 # Make sure we have GPG, curl, and a file to work with
-if [ -z $(which gpg) ]; then echo "Please install GPG"; exit; fi
-if [ -z $(which curl) ]; then echo "Please install curl"; exit; fi
+if [ -z "$(which gpg)" ]; then echo "Please install GPG"; exit; fi
+if [ -z "$(which curl)" ]; then echo "Please install curl"; exit; fi
 if [ -z "$1" ]; then echo "securepomf: Run on a file to encrypt and upload it.
            Run on a secure URL to download and decrypt it."; exit; fi
 
