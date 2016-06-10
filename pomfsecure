@@ -17,8 +17,8 @@ then echo "securepomf: Run on a file to encrypt and upload it.
 
 input_URI="$1"
 in_file="$(basename "$input_URI" | cut -d'#' -f1)"
-up_url="https://pomf.cat/upload.php" # insert preferred clone here
-down_url="https://a.pomf.cat"
+up_url="https://pantsu.cat/upload.php" # insert preferred clone here
+down_url="https://u.pantsu.cat"
 
 
 
